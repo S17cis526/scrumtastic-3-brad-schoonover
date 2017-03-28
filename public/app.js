@@ -15,7 +15,10 @@ xhr.onreadystatechange = function() {
         name.innerHTML = project.name;
         name.href = "/projects/" + project.id;
         document.body.appendChild(name);
-        alert("Load using Ajax");
+        project.onClick = function(event) {
+          event.preventDefault();
+          alert("Load using Ajax");
+        }
       })
     } else {
       console.log('Error: ' + xhr.status); // An error occurred during the request.
